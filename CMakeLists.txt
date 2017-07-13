@@ -16,6 +16,10 @@ else (CMAKE_BUILD_TYPE MATCHES Debug)
     set (CMAKE_CXX_FLAGS "-std=c99 -Os -g -fdata-sections -ffunction-sections -fvisibility=hidden -Wall -Wl,--gc-sections,--build-id=none")
 endif (CMAKE_BUILD_TYPE MATCHES Debug)
 
+set (CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set (CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
 include_directories (.)
 
 add_subdirectory (lib1)
